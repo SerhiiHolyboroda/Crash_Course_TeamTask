@@ -15,6 +15,7 @@ public class HeaderPage extends BasePage {
     @FindBy(xpath = ".//*[contains(@href,'login')]")
     private WebElement loginButton;
 
+
     public WebElement getMyAccountButton() {
         wait.until(ExpectedConditions.visibilityOf(myAccountButton));
         return myAccountButton;

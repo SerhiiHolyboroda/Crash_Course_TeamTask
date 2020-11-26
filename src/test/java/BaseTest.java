@@ -17,6 +17,6 @@ public class BaseTest {
 
     @AfterSuite
     public void closeBrowser() {
-      DriverRepository.closeBrowser();
+        DriverRepository.closeBrowser();
     }
 }

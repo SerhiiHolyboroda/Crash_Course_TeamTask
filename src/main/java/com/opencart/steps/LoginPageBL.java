@@ -18,7 +18,7 @@ public LoginPageBL() {
     loginPage = new LoginPage();
 }
 
-    public LoginPageBL loginNewPerson() {
+    public LoginPageBL loginNewPerson() throws InterruptedException {
         LoginModel loginModel = LoginModelRepository.getLoginModel();
         inputEmail(loginModel.getEmail());
          inputPassword(loginModel.getPassword());
@@ -50,12 +50,14 @@ public LoginPageBL() {
 
 
 
-    private void clickOnContinueButton() {
+    private void clickOnContinueButton() throws InterruptedException {
+        Thread.sleep(6000);
         loginPage.getContinueButton().click();
+        Thread.sleep(6000);
     }
 
     public void verifyUserLogin() {
-        String expectedMessage = "Your Account Has Been Created!";
+        String expectedMessage = "My Account";
         Assert.assertEquals(successLoginPage.getSuccessTitle().getText(), expectedMessage, "Incorrect page title");
     }
 

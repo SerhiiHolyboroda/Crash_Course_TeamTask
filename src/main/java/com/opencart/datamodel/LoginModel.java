@@ -10,7 +10,6 @@ public class LoginModel {
 
     private String password;
 
-    private String passwordConfirm;
 
     LoginModel() {
     }
@@ -35,10 +34,10 @@ public class LoginModel {
             return this;
         }
 
-        public LoginModel.Builder passwordConfirm(String value) {
-            passwordConfirm = value;
-            return this;
-        }
+//        public LoginModel.Builder passwordConfirm(String value) {
+//            passwordConfirm = "11111";
+//            return this;
+//        }
 
         public LoginModel build() {
             return LoginModel.this;

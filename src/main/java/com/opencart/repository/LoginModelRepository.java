@@ -17,7 +17,7 @@ public class LoginModelRepository {
         return LoginModel.getBuilder()
                 .email(RandomStringUtils.randomAlphabetic(5) + "@gmail.com")
                 .password(password)
-                .passwordConfirm(password)
+                //.passwordConfirm(password)
                 .build();
     }
 }
