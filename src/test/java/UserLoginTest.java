@@ -31,7 +31,7 @@ public class UserLoginTest extends BaseTest {
 //       new  Navigation().navigateToUrl(BASE_URL.getValue());
 
          new PageAfterLogin().getMyAccountButton().click();
-        new PageAfterLogin().getEmailConfirmationButton().click();
+        new PageAfterLogin().getLogOut().click();
 //       loginPageBL.verifyUserLogin();
 
     }
