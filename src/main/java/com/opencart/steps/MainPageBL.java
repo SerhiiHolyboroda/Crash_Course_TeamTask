@@ -8,4 +8,7 @@ public class MainPageBL {
     public MyAccountPageBL getMyAccountPageBL() {
         return new MyAccountPageBL();
     }
+    public SuccessLogOutPageBL getSuccessLogOutPageBL() {
+        return new SuccessLogOutPageBL();
+    }
 }

@@ -4,6 +4,7 @@ import com.opencart.datamodel.RegisterModel;
 import com.opencart.pages.RegisterPage;
 import com.opencart.pages.SuccessRegisterPage;
 import com.opencart.repository.RegisterModelRepository;
+import com.opencart.repository.UserRepository;
 import com.opencart.util.DriverUtils;
 import org.testng.Assert;
 
@@ -17,15 +18,25 @@ public class RegisterPageBL {
     }
 
     public RegisterPageBL registerNewPerson() {
-        RegisterModel registerModel = RegisterModelRepository.getRegisterModel();
-        inputFirstName(registerModel.getFirstName());
-        inputLastName(registerModel.getLastName());
-        inputEmail(registerModel.getEmail());
-        inputTelephone(registerModel.getTelephone());
-        inputPassword(registerModel.getPassword());
+       // RegisterModel registerModel = RegisterModelRepository.getRegisterModel();
+
+        inputFirstName(UserRepository.FirstName);
+        inputLastName(UserRepository.LastName);
+        inputEmail(UserRepository.Email);
+        inputTelephone(UserRepository.Telephone);
+        inputPassword(UserRepository.Password);
         chooseSubscribe(1);
         clickPolicyCheckbox();
         clickOnContinueButton();
+
+//        inputFirstName(registerModel.getFirstName());
+//        inputLastName(registerModel.getLastName());
+//        inputEmail(registerModel.getEmail());
+//        inputTelephone(registerModel.getTelephone());
+//        inputPassword(registerModel.getPassword());
+//        chooseSubscribe(1);
+//        clickPolicyCheckbox();
+//        clickOnContinueButton();
 
         successRegisterPage = new SuccessRegisterPage();
         return this;
@@ -74,4 +85,9 @@ public class RegisterPageBL {
         String expectedMessage = "Your Account Has Been Created!";
         Assert.assertEquals(successRegisterPage.getSuccessTitle().getText(), expectedMessage, "Incorrect page title");
     }
+
+    public void clickOnLogoutButton() {
+        successRegisterPage.getLogoutButton().click();
+    }
+
 }

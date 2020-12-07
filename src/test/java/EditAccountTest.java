@@ -9,7 +9,7 @@ public class EditAccountTest extends BaseTest{
 
 
     @BeforeClass
-    public void registerUserWithValidParameters() throws InterruptedException {
+    public void registerUserWithValidParameters() {
         new Navigation().navigateToUrl(BASE_URL.getValue());
         MainPageBL mainPageBL = new MainPageBL();
         RegisterPageBL registerPageBL = mainPageBL.getHeaderPageBL()
@@ -17,32 +17,36 @@ public class EditAccountTest extends BaseTest{
                 .clickOnRegisterButton()
                 .registerNewPerson();
         registerPageBL.verifyUserRegistration();
+        registerPageBL.clickOnLogoutButton();
+        SuccessLogOutPageBL successLogOutPageBL = mainPageBL.getSuccessLogOutPageBL();
+        successLogOutPageBL.verifyUserLogOut();
+        successLogOutPageBL.clickOnContinueButton();
+
+
+//                .clickOnContinueButton();
+//        successLogOutPageBL.clickOnContinueButton();
+
 
 //        new Navigation().navigateToUrl(BASE_URL.getValue());
-//        mainPageBL = new MainPageBL();
-//        LoginPageBL loginPageBL = mainPageBL.getHeaderPageBL()
-//                .clickOnMyAccountButton()
-//                .clickOnLoginButton()
-//                .loginNewPerson();
-//        loginPageBL.verifyUserLogin();
-    }
+        mainPageBL = new MainPageBL();
+        LoginPageBL loginPageBL = null;
+        try {
+            loginPageBL = mainPageBL.getHeaderPageBL()
+                    .clickOnMyAccountButton()
+                    .clickOnLoginButton()
+                    .loginNewPerson();
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        loginPageBL.verifyUserLogin();
+        }
 
     @Test
-    public void editAccountUserWithValidParameters() throws InterruptedException {
-        //new Navigation().navigateToUrl(BASE_URL.getValue());
+    public void editAccountUser() throws InterruptedException {
         MainPageBL mainPageBL = new MainPageBL();
-//        LoginPageBL loginPageBL = mainPageBL.getHeaderPageBL()
-//                .clickOnMyAccountButton()
-//                .clickOnLoginButton()
-//                .loginNewPerson();
-//        loginPageBL.verifyUserLogin();
-
-       // MyAccountPageBL myAccountPageBL = ;
-
-       // EditAccountPageBL editAccountPageBL = new EditAccountPageBL();
         EditAccountPageBL editAccountPageBL =  mainPageBL.getMyAccountPageBL()
                 .clickOnEditButton()
                 .editAccount();
-
+        editAccountPageBL.verifyEditAccount();
     }
 }

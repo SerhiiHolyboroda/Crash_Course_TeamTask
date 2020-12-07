@@ -48,9 +48,9 @@ public class EditAccountPageBL {
     }
 
     private void clickOnContinueButton() throws InterruptedException {
-        Thread.sleep(6000);
+        //Thread.sleep(6000);
         editAccountPage.getContinueButton().click();
-        Thread.sleep(6000);
+        //Thread.sleep(6000);
     }
 
     public void verifyEditAccount() {

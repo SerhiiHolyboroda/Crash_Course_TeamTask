@@ -13,10 +13,12 @@ public class LoginModelRepository {
     }
 
     public static LoginModel getLoginModel() {
+        RegisterModel registerModel = RegisterModelRepository.getRegisterModel();
         String password = RandomStringUtils.randomAlphabetic(7);
         return LoginModel.getBuilder()
-                .email(RandomStringUtils.randomAlphabetic(5) + "@gmail.com")
-                .password(password)
+                .email(registerModel.getEmail())
+                .password(registerModel.getPassword())
+               // .email(RandomStringUtils.randomAlphabetic(5) + "@gmail.com")
                 //.passwordConfirm(password)
                 .build();
     }
