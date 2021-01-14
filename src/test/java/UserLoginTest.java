@@ -30,7 +30,7 @@ public class UserLoginTest extends BaseTest {
 //        WebElement element = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("ID")));
 //       new  Navigation().navigateToUrl(BASE_URL.getValue());
 
-         new PageAfterLogin().getMyAccountButton().click();
+        new PageAfterLogin().getMyAccountButton().click();
         new PageAfterLogin().getLogOut().click();
 //       loginPageBL.verifyUserLogin();
 

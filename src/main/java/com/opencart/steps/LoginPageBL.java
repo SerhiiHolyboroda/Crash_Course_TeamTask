@@ -20,7 +20,7 @@ public LoginPageBL() {
         LoginModel loginModel = LoginModelRepository.getLoginModel();
         inputEmail(loginModel.getEmail());
          inputPassword(loginModel.getPassword());
-//        ArrayList <String> data = new setRegisterModel();
+
 
             clickOnContinueButton();
 
@@ -44,9 +44,7 @@ public LoginPageBL() {
 
     }
 
-//    private void chooseSubscribe(int value) {
-//        new DriverUtils().clickOnElementJS(registerPage.getSubscribeRadioButton(value));
-//    }
+
 
 
 

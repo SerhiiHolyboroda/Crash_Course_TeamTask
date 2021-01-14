@@ -17,9 +17,9 @@ public class LoginModelRepository {
     }
 
     public static LoginModel getLoginModel() {
-        ArrayList<String> data = setRegisterModel();
-        System.out.println(data.get(0));
-        System.out.println(data.get(1));
+//        ArrayList<String> data = setRegisterModel();
+//        System.out.println(data.get(0));
+//        System.out.println(data.get(1));
   //  String password = data.get(0);
      String password = "nosferatugamevampire@gmail.com";
         return LoginModel.getBuilder()
